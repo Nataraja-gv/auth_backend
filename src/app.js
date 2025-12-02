@@ -1,9 +1,11 @@
 const express = require("express");
 require("dotenv").config();
 const ConnectDB = require("./config/database-connection");
+const authRouter = require("./routers/auth-router");
 
 const app = express();
 
+app.use("/", authRouter);
 
 const StartServer = async () => {
   try {
