@@ -5,7 +5,11 @@ const authRouter = require("./routers/auth-router");
 
 const app = express();
 
+app.use(express.json());
+
+
 app.use("/", authRouter);
+
 
 const StartServer = async () => {
   try {
